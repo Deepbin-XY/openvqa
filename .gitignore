@@ -154,3 +154,5 @@ dmypy.json
 .vscode/
 .vs
 .vs/
+data/
+*.tar.gz
