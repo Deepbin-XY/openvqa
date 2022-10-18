@@ -47,7 +47,7 @@ class Net(nn.Module):
             weight_norm(nn.Linear(__C.HIDDEN_SIZE,
                                   __C.FLAT_OUT_SIZE), dim=None),
             nn.ReLU(),
-            nn.Dropout(__C.CLASSIFER_DROPOUT_R, inplace=True),
+            nn.Dropout(__C.CLASSIFER_DROPOUT_R, inplace=False),
             weight_norm(nn.Linear(__C.FLAT_OUT_SIZE, answer_size), dim=None)
         ]
         self.classifer = nn.Sequential(*layers)
