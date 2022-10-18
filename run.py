@@ -14,12 +14,12 @@ def parse_args():
     '''
     parser = argparse.ArgumentParser(description='OpenVQA Args')
 
-    parser.add_argument('--RUN', dest='RUN_MODE',
+    parser.add_argument('--RUN', dest='RUN_MODE', #运行模式
                       choices=['train', 'val', 'test'],
                       help='{train, val, test}',
                       type=str, required=True)
 
-    parser.add_argument('--MODEL', dest='MODEL',
+    parser.add_argument('--MODEL', dest='MODEL', #所使用的VQA任务模型
                       choices=[
                            'mcan_small',
                            'mcan_large',
@@ -45,7 +45,7 @@ def parse_args():
                         ,
                       type=str, required=True)
 
-    parser.add_argument('--DATASET', dest='DATASET',
+    parser.add_argument('--DATASET', dest='DATASET',  #所使用的数据集
                       choices=['vqa', 'gqa', 'clevr'],
                       help='{'
                            'vqa,'
@@ -64,19 +64,19 @@ def parse_args():
                         ,
                       type=str)
 
-    parser.add_argument('--EVAL_EE', dest='EVAL_EVERY_EPOCH',
+    parser.add_argument('--EVAL_EE', dest='EVAL_EVERY_EPOCH', #是否每个EPOCHS都进行评估
                       choices=['True', 'False'],
                       help='True: evaluate the val split when an epoch finished,'
                            'False: do not evaluate on local',
                       type=str)
 
-    parser.add_argument('--SAVE_PRED', dest='TEST_SAVE_PRED',
+    parser.add_argument('--SAVE_PRED', dest='TEST_SAVE_PRED', #是否保存预测向量
                       choices=['True', 'False'],
                       help='True: save the prediction vectors,'
                            'False: do not save the prediction vectors',
                       type=str)
 
-    parser.add_argument('--BS', dest='BATCH_SIZE',
+    parser.add_argument('--BS', dest='BATCH_SIZE', # BatchSize大小
                       help='batch size in training',
                       type=int)
 
